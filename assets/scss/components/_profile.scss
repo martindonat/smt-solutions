@@ -1,0 +1,137 @@
+@use "variables" as *;
+
+.profile {
+  padding: $space-8 0;
+  background: $color-white;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: $space-7;
+    row-gap: $space-6;
+    align-items: start;
+  }
+
+
+  // ----------------------------------------------------------
+  // Titel – oben links
+  // ----------------------------------------------------------
+
+  &__title {
+    grid-column: 1;
+
+    h2 {
+      margin: $space-3 0 0;
+
+      font-size: $font-size-xl;
+      line-height: 1.05;
+      letter-spacing: -0.05em;
+    }
+  }
+
+
+  // ----------------------------------------------------------
+  // Bild – komplette rechte Hälfte
+  // ----------------------------------------------------------
+
+  &__image {
+    grid-column: 2;
+
+    width: 100%;
+    margin: 0;
+
+    img {
+      display: block;
+
+      width: 100%;
+      height: auto;
+
+      border-radius: $radius-lg;
+    }
+
+    figcaption {
+      margin-top: $space-1;
+
+      color: $color-text-muted;
+      font-size: $font-size-sm;
+    }
+  }
+
+
+  // ----------------------------------------------------------
+  // Text – unterhalb des Bildes, weiterhin rechte Hälfte
+  // ----------------------------------------------------------
+
+  &__content {
+    grid-column: 2;
+
+    width: 100%;
+
+    > p {
+      color: $color-text-muted;
+      font-size: $font-size-md;
+    }
+  }
+
+  &__lead {
+    color: $color-text !important;
+
+    font-size: $font-size-lg !important;
+    font-weight: $font-weight-medium;
+  }
+
+
+  // ----------------------------------------------------------
+  // Meta-Tabelle
+  // ----------------------------------------------------------
+
+  &__meta {
+    margin-top: $space-6;
+
+    border-top: 1px solid $color-border;
+
+    > div {
+      display: grid;
+      grid-template-columns: 130px 1fr;
+
+      padding: $space-2 0;
+
+      border-bottom: 1px solid $color-border;
+
+      font-size: $font-size-sm;
+    }
+
+    span {
+      color: $color-text-muted;
+    }
+
+    strong {
+      font-weight: $font-weight-medium;
+    }
+  }
+
+
+  // ----------------------------------------------------------
+  // Mobile
+  // ----------------------------------------------------------
+
+  @media (max-width: $breakpoint-md) {
+
+    &__grid {
+      grid-template-columns: 1fr;
+      gap: $space-5;
+    }
+
+    &__title,
+    &__image,
+    &__content {
+      grid-column: 1;
+    }
+
+    &__meta {
+      > div {
+        grid-template-columns: 120px 1fr;
+      }
+    }
+  }
+}

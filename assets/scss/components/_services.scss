@@ -1,0 +1,113 @@
+@use "variables" as *;
+
+// ------------------------------------------------------------
+// Services
+// ------------------------------------------------------------
+
+.services {
+  padding: $space-8 0;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  border: 1px solid $color-border;
+
+  @media (max-width: $breakpoint-md) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.service-card {
+  min-height: 430px;
+
+  padding: $card-padding;
+
+  display: flex;
+  flex-direction: column;
+
+  border-right: 1px solid $color-border;
+
+  &:last-child {
+    border-right: none;
+  }
+
+  &__number {
+    margin-bottom: auto;
+
+    font-size: $font-size-sm;
+    opacity: 0.6;
+  }
+
+  h3 {
+    margin:
+      $space-6
+      0
+      $space-2;
+
+    font-size: $font-size-lg;
+  }
+
+  p {
+    margin: 0 0 $space-4;
+
+    color: $color-text-muted;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+
+    li {
+      padding: $space-1 0;
+
+      border-top: 1px solid $color-border;
+
+      font-size: $font-size-sm;
+    }
+  }
+
+  &--teal {
+    background: $color-primary;
+    color: $color-white;
+
+    p {
+      color: rgba($color-white, 0.75);
+    }
+
+    ul li {
+      border-color: rgba($color-white, 0.2);
+    }
+  }
+
+  &--dark {
+    background: $color-background-dark;
+    color: $color-white;
+
+    p {
+      color: rgba($color-white, 0.7);
+    }
+
+    ul li {
+      border-color: rgba($color-white, 0.15);
+    }
+  }
+
+  @media (max-width: $breakpoint-md) {
+    min-height: auto;
+
+    border-right: none;
+    border-bottom: 1px solid $color-border;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &__number {
+      margin-bottom: $space-5;
+    }
+  }
+}

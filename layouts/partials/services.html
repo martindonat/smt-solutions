@@ -1,0 +1,67 @@
+<section
+  class="services"
+  id="{{ .Params.services.id }}"
+>
+
+  <div class="container">
+
+    <div class="section-head">
+
+      <span class="section-head__number">
+        {{ .Params.services.number }}
+      </span>
+
+      <div>
+
+        <p class="section-head__label">
+          {{ .Params.services.label }}
+        </p>
+
+        <h2>
+          {{ .Params.services.title }}
+        </h2>
+
+      </div>
+
+    </div>
+
+
+    <div class="service-grid">
+
+      {{ range $index, $service := hugo.Data.services }}
+
+        <article class="service-card{{ with $service.variant }} service-card--{{ . }}{{ end }}">
+
+          <span class="service-card__number">
+            {{ printf "%02d" (add $index 1) }}
+          </span>
+
+          <h3>
+            {{ $service.title }}
+          </h3>
+
+          <p>
+            {{ $service.text }}
+          </p>
+
+          {{ with $service.items }}
+
+            <ul>
+
+              {{ range . }}
+                <li>{{ . }}</li>
+              {{ end }}
+
+            </ul>
+
+          {{ end }}
+
+        </article>
+
+      {{ end }}
+
+    </div>
+
+  </div>
+
+</section>

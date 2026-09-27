@@ -1,0 +1,82 @@
+baseURL = "https://smt-solutions.de/"
+languageCode = "de-DE"
+title = "Stephan Tilch | Digital · Design · Development"
+
+disableKinds = ["taxonomy", "term"]
+
+
+[params]
+author = "Stephan Tilch"
+email = "smt-solutions@posteo.de"
+
+## HEADER
+
+headerRight = "Stephan Tilch | Digital · Design · Development "
+navigationLabel = "Hauptnavigation"
+
+## FOOTER
+
+[params.footer]
+brand = "SMT"
+navigationLabel = "Footer Navigation"
+
+## MENU
+
+[[menus.main]]
+name = "Leistungen"
+url = "/#leistungen"
+weight = 10
+
+[[menus.main]]
+name = "Profil"
+url = "/#profil"
+weight = 20
+
+[[menus.main]]
+name = "Kontakt"
+url = "/#kontakt"
+weight = 30
+
+
+[[menus.footer]]
+name = "Impressum"
+url = "/impressum/"
+weight = 10
+
+[[menus.footer]]
+name = "Datenschutz"
+url = "/datenschutz/"
+weight = 20
+
+
+
+## IMPRESSUM
+
+[params.imprint]
+name = "Stephan Tilch"
+businessName = ""
+street = "Wilhelm-Külz-Straße 21"
+postalCode = "99084"
+city = "Erfurt"
+
+# Nur angeben, wenn vorhanden
+vatId = ""
+businessId = ""
+
+# Nur relevant, wenn tatsächlich ein entsprechender Registereintrag besteht.
+# [params.imprint.register]
+# name = "Handelsregister"
+# court = "Amtsgericht Musterstadt"
+# number = "HRB 12345"
+
+## DATENSCHUTZ
+
+[params.privacy]
+eyebrow = "Rechtliches"
+lastUpdated = "September 2026"
+
+# Nur true, solange das tatsächlich stimmt
+noExternalResources = true
+
+githubPrivacyURL = "https://docs.github.com/de/site-policy/privacy-policies/github-general-privacy-statement"
+

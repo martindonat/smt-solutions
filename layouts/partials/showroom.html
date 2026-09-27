@@ -1,0 +1,138 @@
+<section
+  class="showroom"
+  id="{{ .Params.showroom.id }}"
+>
+  <div class="container">
+
+    <div class="section-head">
+
+      <span class="section-head__number">
+        {{ .Params.showroom.number }}
+      </span>
+
+      <div>
+
+        <p class="section-head__label">
+          {{ .Params.showroom.label }}
+        </p>
+
+        <h2>
+          {{ .Params.showroom.title }}
+        </h2>
+
+      </div>
+
+    </div>
+
+
+    <div class="showroom__list">
+
+      {{ range $index, $project := hugo.Data.showroom }}
+
+        <article class="showroom__item">
+
+          {{ with $project.image }}
+
+            {{ $image := resources.Get .src }}
+
+            {{ with $image }}
+
+              {{ $image800 := .Resize "800x webp q85" }}
+              {{ $image1200 := .Resize "1200x webp q85" }}
+              {{ $image1600 := .Resize "1600x webp q85" }}
+
+              <figure class="showroom__image">
+
+                {{ with $project.url }}
+                  <a
+                    href="{{ . }}"
+                    {{ if $project.external }}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    {{ end }}
+                  >
+                {{ end }}
+
+                <img
+                  src="{{ $image1200.RelPermalink }}"
+                  srcset="
+                    {{ $image800.RelPermalink }} 800w,
+                    {{ $image1200.RelPermalink }} 1200w,
+                    {{ $image1600.RelPermalink }} 1600w
+                  "
+                  sizes="(max-width: 860px) 100vw, 1200px"
+                  width="{{ $image1200.Width }}"
+                  height="{{ $image1200.Height }}"
+                  alt="{{ $project.image.alt }}"
+                  loading="lazy"
+                  decoding="async"
+                >
+
+                {{ with $project.url }}
+                  </a>
+                {{ end }}
+
+              </figure>
+
+            {{ end }}
+
+          {{ end }}
+
+
+          <div class="showroom__meta">
+
+            <div class="showroom__index">
+              {{ printf "%01d" (add $index 1) }}
+            </div>
+
+
+            <div class="showroom__content">
+
+              <h3>
+                {{ $project.title }}
+              </h3>
+
+              {{ with $project.services }}
+                <p class="showroom__services">
+                  {{ delimit . " · " }}
+                </p>
+              {{ end }}
+
+              {{ with $project.text }}
+                <p class="showroom__text">
+                  {{ . }}
+                </p>
+              {{ end }}
+
+            </div>
+
+
+            {{ with $project.url }}
+
+              <div class="showroom__link">
+
+                <a
+                  href="{{ . }}"
+                  aria-label="{{ $project.title }} ansehen"
+                  {{ if $project.external }}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  {{ end }}
+                >
+                  ↗
+                </a>
+
+              </div>
+
+            {{ end }}
+
+          </div>
+
+        </article>
+
+      {{ end }}
+
+    </div>
+
+  </div>
+</section>

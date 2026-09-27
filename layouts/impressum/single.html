@@ -1,0 +1,149 @@
+{{ define "main" }}
+
+{{ partial "header.html" . }}
+
+<main class="legal">
+
+  <section class="legal__hero">
+    <div class="container">
+
+      <p class="legal__eyebrow">
+        Rechtliches
+      </p>
+
+      <h1>
+        {{ .Title }}
+      </h1>
+
+    </div>
+  </section>
+
+
+  <section class="legal__content">
+    <div class="container">
+
+      <div class="legal__grid">
+
+        <div class="legal__aside">
+          <p>Anbieter</p>
+        </div>
+
+        <div class="legal__body">
+
+          <h2>
+            Angaben gemäß § 5 DDG
+          </h2>
+
+          <address>
+            <strong>{{ .Site.Params.imprint.name }}</strong><br>
+
+            {{ with .Site.Params.imprint.businessName }}
+              {{ . }}<br>
+            {{ end }}
+
+            {{ .Site.Params.imprint.street }}<br>
+            {{ .Site.Params.imprint.postalCode }}
+            {{ .Site.Params.imprint.city }}
+          </address>
+
+
+          <h2>Kontakt</h2>
+
+          <p>
+            E-Mail:
+            <a href="mailto:{{ .Site.Params.email }}">
+              {{ .Site.Params.email }}
+            </a>
+
+            {{ with .Site.Params.imprint.phone }}
+              <br>
+              Telefon:
+              <a href="tel:{{ . | replaceRE "[^0-9+]" "" }}">
+                {{ . }}
+              </a>
+            {{ end }}
+          </p>
+
+
+          {{ with .Site.Params.imprint.vatId }}
+
+            <h2>Umsatzsteuer-ID</h2>
+
+            <p>
+              Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG:
+              <br>
+              {{ . }}
+            </p>
+
+          {{ end }}
+
+
+          {{ with .Site.Params.imprint.businessId }}
+
+            <h2>Wirtschafts-Identifikationsnummer</h2>
+
+            <p>
+              {{ . }}
+            </p>
+
+          {{ end }}
+
+
+          {{ if .Site.Params.imprint.register }}
+
+            <h2>Registereintrag</h2>
+
+            <p>
+              {{ with .Site.Params.imprint.register.name }}
+                Register: {{ . }}<br>
+              {{ end }}
+
+              {{ with .Site.Params.imprint.register.court }}
+                Registergericht: {{ . }}<br>
+              {{ end }}
+
+              {{ with .Site.Params.imprint.register.number }}
+                Registernummer: {{ . }}
+              {{ end }}
+            </p>
+
+          {{ end }}
+
+
+          {{ with .Site.Params.imprint.editorialResponsible }}
+
+            <h2>
+              Verantwortlich für journalistisch-redaktionelle Inhalte
+            </h2>
+
+            <p>
+              {{ .name }}<br>
+              {{ .street }}<br>
+              {{ .postalCode }} {{ .city }}
+            </p>
+
+          {{ end }}
+
+
+          {{ with .Site.Params.imprint.disputeResolution }}
+
+            <h2>Verbraucherstreitbeilegung</h2>
+
+            <p>
+              {{ . }}
+            </p>
+
+          {{ end }}
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+{{ partial "footer.html" . }}
+
+{{ end }}

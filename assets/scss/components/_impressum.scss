@@ -1,0 +1,157 @@
+@use "variables" as *;
+
+.legal {
+  background: $color-white;
+
+  &__hero {
+    padding:
+      calc(#{$header-height} + #{$space-7})
+      0
+      $space-7;
+
+    background: $color-background;
+
+    h1 {
+      max-width: $container-narrow;
+
+      margin: 0;
+
+      font-size: $font-size-hero;
+      font-weight: $font-weight-medium;
+      line-height: $line-height-tight;
+      letter-spacing: -0.065em;
+    }
+  }
+
+  &__eyebrow {
+    margin: 0 0 $space-3;
+
+    color: $color-primary;
+
+    font-size: $font-size-sm;
+    font-weight: $font-weight-semibold;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+
+  &__content {
+    padding: $space-8 0;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $space-7;
+  }
+
+  &__aside {
+    color: $color-primary;
+
+    font-size: $font-size-sm;
+    font-weight: $font-weight-semibold;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+
+    p {
+      margin: $space-1 0 0;
+    }
+  }
+
+  &__body {
+    max-width: $container-narrow;
+
+    h2 {
+      margin:
+        $space-6
+        0
+        $space-2;
+
+      font-size: $font-size-lg;
+      line-height: 1.2;
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+
+    p,
+    address {
+      margin: 0 0 $space-3;
+
+      color: $color-text-muted;
+
+      font-size: $font-size-md;
+      font-style: normal;
+    }
+
+    strong {
+      color: $color-text;
+    }
+
+    a {
+      color: $color-primary;
+
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.15em;
+    }
+  }
+
+  @media (max-width: $breakpoint-md) {
+
+    &__grid {
+      grid-template-columns: 1fr;
+      gap: $space-5;
+    }
+  }
+}
+
+.legal {
+  &__content {
+    padding: $space-8 0;
+  }
+
+  &__body {
+    max-width: $container-narrow;
+
+    // bewusst nicht zentriert:
+    margin-left: auto;
+    margin-right: auto;
+
+    h2 {
+      margin:
+        $space-6
+        0
+        $space-2;
+
+      font-size: $font-size-lg;
+      line-height: 1.2;
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+
+    p,
+    address,
+    ul {
+      color: $color-text-muted;
+      font-size: $font-size-md;
+    }
+
+    address {
+      font-style: normal;
+    }
+
+    strong {
+      color: $color-text;
+    }
+
+    a {
+      color: $color-primary;
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.15em;
+    }
+  }
+}

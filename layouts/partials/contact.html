@@ -1,0 +1,33 @@
+<section
+  class="contact"
+  id="{{ .Params.contact.id }}"
+>
+
+  <div class="container contact__inner">
+
+    <p class="contact__label">
+      {{ .Params.contact.label }}
+    </p>
+
+    <h2>
+      {{ .Params.contact.title }}
+    </h2>
+
+    <p class="contact__text">
+      {{ .Params.contact.text }}
+    </p>
+
+    <a
+      href="mailto:{{ .Site.Params.email }}"
+      class="contact__link"
+    >
+      {{ .Site.Params.email }}
+
+      {{ with .Params.contact.icon }}
+        <span aria-hidden="true">{{ . }}</span>
+      {{ end }}
+    </a>
+
+  </div>
+
+</section>

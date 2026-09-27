@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="{{ site.Language.Locale | default "de" }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>
+        {{ if .IsHome }}
+            {{ .Site.Title }}
+        {{ else }}
+            {{ .Title }} · {{ .Site.Title }}
+        {{ end }}
+    </title>
+
+    {{- with resources.Get "scss/main.scss" -}}
+        {{- $opts := dict
+            "transpiler" "dartsass"
+            "enableSourceMap" hugo.IsDevelopment
+            "outputStyle" (cond hugo.IsDevelopment "expanded" "compressed")
+            "targetPath" "css/main.css"
+        -}}
+        {{- with . | css.Sass $opts -}}
+            {{- if hugo.IsDevelopment -}}
+            <link rel="stylesheet" href="{{ .RelPermalink }}">
+            {{- else -}}
+            {{- with . | fingerprint "sha256" -}}
+                <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+            {{- end -}}
+            {{- end -}}
+        {{- end -}}
+        {{- end -}}
+
+</head>
+
+<body>
+
+    {{ block "main" . }}
+    {{ end }}
+
+</body>
+</html>

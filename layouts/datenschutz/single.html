@@ -1,0 +1,183 @@
+{{ define "main" }}
+
+{{ partial "header.html" . }}
+
+<main class="legal">
+
+  <section class="legal__hero">
+    <div class="container">
+
+      <p class="legal__eyebrow">
+        {{ .Site.Params.privacy.eyebrow }}
+      </p>
+
+      <h1>{{ .Title }}</h1>
+
+    </div>
+  </section>
+
+
+  <section class="legal__content">
+
+    <div class="container">
+
+      <div class="legal__body">
+
+        <h2>1. Verantwortlicher</h2>
+
+        <p>
+          Verantwortlich für die Datenverarbeitung auf dieser Website:
+        </p>
+
+        <address>
+          <strong>{{ .Site.Params.imprint.name }}</strong><br>
+
+          {{ with .Site.Params.imprint.businessName }}
+            {{ . }}<br>
+          {{ end }}
+
+          {{ .Site.Params.imprint.street }}<br>
+          {{ .Site.Params.imprint.postalCode }}
+          {{ .Site.Params.imprint.city }}<br><br>
+
+          E-Mail:
+          <a href="mailto:{{ .Site.Params.email }}">
+            {{ .Site.Params.email }}
+          </a>
+        </address>
+
+
+        <h2>2. Hosting über GitHub Pages</h2>
+
+        <p>
+          Diese Website wird über GitHub Pages bereitgestellt.
+          Anbieter des Dienstes ist GitHub.
+        </p>
+
+        <p>
+          Beim Aufruf einer über GitHub Pages bereitgestellten Website
+          wird insbesondere die IP-Adresse des zugreifenden Geräts
+          verarbeitet und nach Angaben von GitHub zu Sicherheitszwecken
+          protokolliert und gespeichert.
+        </p>
+
+        <p>
+          Die Verarbeitung ist für die technische Bereitstellung und
+          Absicherung dieser Website erforderlich.
+        </p>
+
+        <p>
+          Soweit ich im Zusammenhang mit der Bereitstellung dieser
+          Website personenbezogene Daten verarbeite, erfolgt dies auf
+          Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Mein berechtigtes
+          Interesse liegt in der sicheren und zuverlässigen
+          Bereitstellung meines Internetauftritts.
+        </p>
+
+        {{ with .Site.Params.privacy.githubPrivacyURL }}
+          <p>
+            Weitere Informationen zur Datenverarbeitung durch GitHub
+            finden Sie in der
+            <a href="{{ . }}" rel="noopener noreferrer">
+              Datenschutzerklärung von GitHub
+            </a>.
+          </p>
+        {{ end }}
+
+
+        <h2>3. Kontaktaufnahme per E-Mail</h2>
+
+        <p>
+          Wenn Sie mich per E-Mail kontaktieren, verarbeite ich die von
+          Ihnen übermittelten personenbezogenen Daten zur Bearbeitung
+          Ihrer Anfrage und zur weiteren Kommunikation.
+        </p>
+
+        <p>
+          Dazu können insbesondere Ihr Name, Ihre E-Mail-Adresse, der
+          Inhalt Ihrer Nachricht sowie weitere freiwillig mitgeteilte
+          Informationen gehören.
+        </p>
+
+        <p>
+          Erfolgt die Kontaktaufnahme zur Anbahnung oder Durchführung
+          eines Vertrags, ist Art. 6 Abs. 1 lit. b DSGVO die
+          Rechtsgrundlage. In anderen Fällen erfolgt die Verarbeitung
+          auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Das berechtigte
+          Interesse besteht in der Bearbeitung und Beantwortung Ihrer
+          Anfrage.
+        </p>
+
+        <p>
+          Die Daten werden gelöscht, sobald sie für den Zweck der
+          Verarbeitung nicht mehr erforderlich sind und keine
+          gesetzlichen Aufbewahrungspflichten entgegenstehen.
+        </p>
+
+
+        <h2>4. Cookies und Tracking</h2>
+
+        <p>
+          Diese Website verwendet derzeit keine eigenen Analyse- oder
+          Tracking-Dienste und setzt keine Cookies zu Analyse-,
+          Marketing- oder Werbezwecken ein.
+        </p>
+
+        {{ if .Site.Params.privacy.noExternalResources }}
+          <p>
+            Es werden außerdem keine extern gehosteten Schriftarten,
+            Tracking-Skripte oder vergleichbaren Drittanbieter-Ressourcen
+            eingebunden.
+          </p>
+        {{ end }}
+
+
+        <h2>5. Ihre Rechte</h2>
+
+        <p>
+          Ihnen stehen nach den gesetzlichen Voraussetzungen insbesondere
+          folgende Rechte hinsichtlich Ihrer personenbezogenen Daten zu:
+        </p>
+
+        <ul>
+          <li>Recht auf Auskunft</li>
+          <li>Recht auf Berichtigung</li>
+          <li>Recht auf Löschung</li>
+          <li>Recht auf Einschränkung der Verarbeitung</li>
+          <li>Recht auf Datenübertragbarkeit</li>
+          <li>Recht auf Widerspruch gegen die Verarbeitung</li>
+        </ul>
+
+
+        <h2>6. Beschwerderecht</h2>
+
+        <p>
+          Sie haben das Recht, sich bei einer zuständigen
+          Datenschutzaufsichtsbehörde über die Verarbeitung Ihrer
+          personenbezogenen Daten zu beschweren.
+        </p>
+
+
+        <h2>7. Aktualität</h2>
+
+        <p>
+          Diese Datenschutzerklärung wird angepasst, wenn sich die
+          Datenverarbeitung auf dieser Website oder die rechtlichen
+          Anforderungen ändern.
+        </p>
+
+        {{ with .Site.Params.privacy.lastUpdated }}
+          <p>Stand: {{ . }}</p>
+        {{ end }}
+
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+{{ partial "footer.html" . }}
+
+{{ end }}

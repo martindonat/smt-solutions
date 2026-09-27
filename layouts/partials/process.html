@@ -1,0 +1,59 @@
+<section
+  class="process"
+  id="{{ .Params.process.id }}"
+>
+
+  <div class="container">
+
+    <div class="section-head">
+
+      <span class="section-head__number">
+        {{ .Params.process.number }}
+      </span>
+
+      <div>
+
+        <p class="section-head__label">
+          {{ .Params.process.label }}
+        </p>
+
+        <h2>
+          {{ .Params.process.title }}
+        </h2>
+
+      </div>
+
+    </div>
+
+
+    <div class="process-list">
+
+      {{ range $index, $step := hugo.Data.process }}
+
+        <article class="process-item">
+
+          <span>
+            {{ printf "%02d" (add $index 1) }}
+          </span>
+
+          <div>
+
+            <h3>
+              {{ $step.title }}
+            </h3>
+
+            <p>
+              {{ $step.text }}
+            </p>
+
+          </div>
+
+        </article>
+
+      {{ end }}
+
+    </div>
+
+  </div>
+
+</section>

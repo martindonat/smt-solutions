@@ -1,0 +1,46 @@
+@use "variables" as *;
+
+// ------------------------------------------------------------
+// Section Head
+// ------------------------------------------------------------
+
+.section-head {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: $space-4;
+
+  margin-bottom: $space-6;
+
+  &__number,
+  &__label {
+    color: $color-primary;
+
+    font-size: $font-size-sm;
+    font-weight: $font-weight-semibold;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+
+  &__label {
+    margin: 0 0 $space-2;
+  }
+
+  h2 {
+    max-width: 800px;
+
+    margin: 0;
+
+    font-size: $font-size-xl;
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    grid-template-columns: 1fr;
+
+    &__number {
+      display: none;
+    }
+  }
+}
+

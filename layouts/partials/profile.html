@@ -1,0 +1,103 @@
+<section
+  class="profile"
+  id="{{ .Params.profile.id }}"
+>
+  <div class="container">
+
+    <div class="profile__grid">
+
+      <!-- Titel links -->
+      <div class="profile__title">
+
+        <span class="section-head__number">
+          {{ .Params.profile.number }}
+        </span>
+
+        <p class="section-head__label">
+          {{ .Params.profile.label }}
+        </p>
+
+        <h2>
+          {{ .Params.profile.title
+            | strings.TrimSpace
+            | replaceRE "\n" "<br>"
+            | safeHTML
+          }}
+        </h2>
+
+      </div>
+
+
+      <!-- Bild rechts -->
+      {{ with .Params.profile.image }}
+
+        {{ $image := resources.Get .src }}
+
+        {{ with $image }}
+
+          {{ $image600 := .Resize "600x webp q85" }}
+          {{ $image900 := .Resize "900x webp q85" }}
+          {{ $image1200 := .Resize "1200x webp q85" }}
+
+          <figure class="profile__image">
+
+            <img
+              src="{{ $image900.RelPermalink }}"
+              srcset="
+                {{ $image600.RelPermalink }} 600w,
+                {{ $image900.RelPermalink }} 900w,
+                {{ $image1200.RelPermalink }} 1200w
+              "
+              sizes="(max-width: 860px) 100vw, 50vw"
+              width="{{ $image900.Width }}"
+              height="{{ $image900.Height }}"
+              alt="{{ $.Params.profile.image.alt }}"
+              loading="lazy"
+              decoding="async"
+            >
+
+            {{ with $.Params.profile.image.caption }}
+              <figcaption>{{ . }}</figcaption>
+            {{ end }}
+
+          </figure>
+
+        {{ end }}
+
+      {{ end }}
+
+
+      <!-- Inhalt darunter -->
+      <div class="profile__content">
+
+        <p class="profile__lead">
+          {{ .Params.profile.lead }}
+        </p>
+
+        {{ range .Params.profile.text }}
+          <p>{{ . | markdownify }}</p>
+        {{ end }}
+
+        {{ with .Params.profile.meta }}
+
+          <div class="profile__meta">
+
+            {{ range . }}
+
+              <div>
+                <span>{{ .label }}</span>
+                <strong>{{ .value }}</strong>
+              </div>
+
+            {{ end }}
+
+          </div>
+
+        {{ end }}
+
+      </div>
+
+    </div>
+
+  </div>
+</section>

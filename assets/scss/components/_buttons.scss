@@ -1,0 +1,34 @@
+@use "variables" as *;
+
+// ------------------------------------------------------------
+// Buttons
+// ------------------------------------------------------------
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $space-2;
+
+  padding: $button-padding-y $button-padding-x;
+
+  border-radius: $radius-pill;
+
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+
+  transition:
+    transform $transition-fast,
+    background-color $transition-fast;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+
+  &--primary {
+    background: $color-accent;
+    color: $color-white;
+  }
+}
+
+

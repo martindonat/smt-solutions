@@ -1,0 +1,29 @@
+- title: "Webdesign"
+  text: >
+    Klare, responsive Websites mit Fokus auf Inhalt,
+    Nutzerführung und einem eigenständigen visuellen Auftritt.
+  items:
+    - "Konzeption"
+    - "UI / UX"
+    - "Responsive Design"
+  variant: "dark"
+
+- title: "Webentwicklung"
+  text: >
+    Schnelle, wartbare Websites auf einer technischen Basis,
+    die zum Projekt passt.
+  items:
+    - "Hugo"
+    - "HTML / SCSS"
+    - "Performance"
+  variant: "teal"
+
+- title: "Content & Media"
+  text: >
+    Inhalte, Bilder und digitale Medien, die nicht nur Platz
+    füllen, sondern eine klare Botschaft transportieren.
+  items:
+    - "Content-Struktur"
+    - "Bildbearbeitung"
+    - "Digitale Medien"
+  variant: "dark"

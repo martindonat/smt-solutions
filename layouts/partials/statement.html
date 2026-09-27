@@ -1,0 +1,11 @@
+<section class="statement">
+
+  <div class="container">
+
+    <p class="statement__text">
+      {{ .Params.statement | markdownify | strings.TrimSpace | replaceRE "\n" "<br>" | safeHTML }}
+    </p>
+
+  </div>
+
+</section>

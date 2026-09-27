@@ -1,0 +1,52 @@
+@use "variables" as *;
+
+// ------------------------------------------------------------
+// Footer
+// ------------------------------------------------------------
+
+.site-footer {
+  padding: $space-4 0;
+
+  background: $color-background-dark;
+  color: $color-white;
+
+  &__inner {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: $space-4;
+    align-items: center;
+  }
+
+  strong {
+    font-size: $font-size-lg;
+    letter-spacing: -0.06em;
+  }
+
+  p {
+    margin: 0;
+
+    color: rgba($color-white, 0.6);
+    font-size: $font-size-sm;
+  }
+
+  nav {
+    display: flex;
+    gap: $space-3;
+
+    font-size: $font-size-sm;
+
+    a {
+      color: rgba($color-white, 0.7);
+
+      &:hover {
+        color: $color-white;
+      }
+    }
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    &__inner {
+      grid-template-columns: 1fr;
+    }
+  }
+}

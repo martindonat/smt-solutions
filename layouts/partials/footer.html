@@ -1,0 +1,31 @@
+<footer class="site-footer">
+
+  <div class="container site-footer__inner">
+
+    <strong>
+      {{ .Site.Params.footer.brand }}
+    </strong>
+
+    <p>
+      © {{ now.Year }} {{ .Site.Params.author }}
+    </p>
+
+    {{ with .Site.Menus.footer }}
+
+      <nav aria-label="{{ $.Site.Params.footer.navigationLabel }}">
+
+        {{ range . }}
+
+          <a href="{{ .URL | relURL }}">
+            {{ .Name }}
+          </a>
+
+        {{ end }}
+
+      </nav>
+
+    {{ end }}
+
+  </div>
+
+</footer>

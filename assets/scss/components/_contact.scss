@@ -1,0 +1,60 @@
+@use "variables" as *;
+
+// ------------------------------------------------------------
+// Contact
+// ------------------------------------------------------------
+
+.contact {
+  padding: $space-8 0;
+
+  background: $color-accent;
+  color: $color-white;
+
+  &__inner {
+    max-width: $container-width;
+  }
+
+  &__label {
+    margin: 0 0 $space-4;
+
+    font-size: $font-size-sm;
+    font-weight: $font-weight-semibold;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+
+  h2 {
+    max-width: 1000px;
+
+    margin: 0;
+
+    font-size: $font-size-hero;
+    font-weight: $font-weight-medium;
+    line-height: 0.95;
+    letter-spacing: -0.065em;
+  }
+
+  &__text {
+    max-width: 600px;
+
+    margin:
+      $space-5
+      0
+      $space-6;
+
+    font-size: $font-size-md;
+  }
+
+  &__link {
+    display: inline-flex;
+    gap: $space-2;
+
+    padding-bottom: $space-1;
+
+    border-bottom: 2px solid currentColor;
+
+    font-size: $font-size-lg;
+    font-weight: $font-weight-semibold;
+  }
+}
+

@@ -1,0 +1,28 @@
+- title: "Projekt Eins: Anwaltskanzlei Arbeitsrecht Winter"
+  services:
+    - "Webdesign"
+    - "Entwicklung"
+    - "Hugo"
+  text: >-
+    Reduzierter Webauftritt mit klarer Struktur,
+    schneller Auslieferung und einfacher Wartbarkeit.
+  url: "https://www.arbeitsrecht-winter.ch"
+  external: true
+  image:
+    src: "images/Screenshot 2026-09-18_Arbeitsrecht_Winter.png"
+    alt: "Screenshot Arbeitsrecht Winter"
+
+
+- title: "Projekt Zwei"
+  services:
+    - "Konzeption"
+    - "UI / UX"
+    - "Content"
+  text: >-
+    Überarbeitung eines bestehenden Auftritts mit Fokus
+    auf Nutzerführung und visuelle Klarheit.
+  url: "https://www.dommusik-erfurt.de"
+  external: true
+  image:
+    src: "images/Screenshot 2026-09-18_Musik_am_Erfurter_Dom.png"
+    alt: "Screenshot Dommusik Erfurt"
