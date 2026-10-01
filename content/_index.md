@@ -5,9 +5,9 @@ hero:
   id: "start"
   eyebrow: "Web · Content · Digital"
   title: |
-    Digitale Auftritte,
-    die klar aussehen
-    und klar funktionieren.
+    Digitale Auftritte –
+    klar, verständlich,
+    pflegeleicht.
   intro: >-
     Ich entwickle Websites und digitale Inhalte für Unternehmen,
     Selbstständige und Projekte, die professionell auftreten wollen –
@@ -19,8 +19,8 @@ hero:
 
 statement: |
   Der erste Eindruck entscheidet.
-  *Technik ist Mittel zum Zweck.*
-  User Experience zahlt sich aus.
+  *Nicht nur am ersten Tag.*
+  Deshalb zählen klare Gestaltung und einfache Pflege.
 
 
 services:
@@ -41,7 +41,7 @@ profile:
   image:
     src: "images/Fotoloft_Erfurt_831912552.jpg"
     alt: "Stephan Tilch"
-  lead: "Zuhören. Analyse. Feedback."
+  lead: "Zuhören. Analysieren. Feedback."
 
   text:
     - >-
@@ -81,8 +81,8 @@ showroom:
 
 contact:
   id: "kontakt"
-  label: "Haben Sie ein Projekt?"
-  title: "Lassen Sie uns darüber sprechen."
+  label: "Nächster Schritt"
+  title: "Was braucht ihr digitaler Auftritt?"
   text: >-
     Eine neue Website, ein Relaunch oder einfach eine Idee,
     bei der noch nicht klar ist, wie die technische Lösung aussehen soll?

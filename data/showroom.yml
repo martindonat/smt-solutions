@@ -1,11 +1,13 @@
-- title: "Projekt Eins: Anwaltskanzlei Arbeitsrecht Winter"
+- title: "Projekt Eins: Webseite für eine Anwaltskanzlei"
   services:
-    - "Webdesign"
+    - "Konzeption"
     - "Entwicklung"
-    - "Hugo"
+    - "Logo-Design"
+    - "Content"
   text: >-
-    Reduzierter Webauftritt mit klarer Struktur,
-    schneller Auslieferung und einfacher Wartbarkeit.
+    Webauftritt mit klarer Struktur, schneller Auslieferung und einfacher Wartbarkeit.
+    Die Designsprache betont Klarheit, Eleganz und Seriösität. In Abstimmung mit der Kundin
+    wurde der gesamte Auftritt inkl. Logo neu gestaltet.
   url: "https://www.arbeitsrecht-winter.ch"
   external: true
   image:
@@ -13,7 +15,7 @@
     alt: "Screenshot Arbeitsrecht Winter"
 
 
-- title: "Projekt Zwei"
+- title: "Projekt Zwei: Webseite Dommusik und Förderverein"
   services:
     - "Konzeption"
     - "UI / UX"

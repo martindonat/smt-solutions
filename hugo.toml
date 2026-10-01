@@ -1,5 +1,5 @@
 baseURL = "https://smt-solutions.de/"
-languageCode = "de-DE"
+locale = "de-DE"
 title = "Stephan Tilch | Digital · Design · Development"
 
 disableKinds = ["taxonomy", "term"]

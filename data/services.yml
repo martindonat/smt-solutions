@@ -1,7 +1,7 @@
 - title: "Webdesign"
   text: >
-    Klare, responsive Websites mit Fokus auf Inhalt,
-    Nutzerführung und einem eigenständigen visuellen Auftritt.
+    Klare, eigenständige Konzeption mit Fokus auf Inhalt und
+    Nutzerführung – abgestimmt auf inidividuelle Ziele und Bedürfnisse.
   items:
     - "Konzeption"
     - "UI / UX"
@@ -11,9 +11,9 @@
 - title: "Webentwicklung"
   text: >
     Schnelle, wartbare Websites auf einer technischen Basis,
-    die zum Projekt passt.
+    die zum Projekt passt. Optimiert für Suchmaschinen und AI.
   items:
-    - "Hugo"
+    - "SEO / GEO"
     - "HTML / SCSS"
     - "Performance"
   variant: "teal"
