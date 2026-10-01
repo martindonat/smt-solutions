@@ -12,6 +12,34 @@
         {{ end }}
     </title>
 
+    {{ with resources.Get "images/favicon.png" }}
+
+        {{ $favicon32 := .Resize "32x32 png" }}
+        {{ $favicon192 := .Resize "192x192 png" }}
+        {{ $appleTouch := .Resize "180x180 png" }}
+
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="{{ $favicon32.RelPermalink }}"
+        >
+
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="192x192"
+            href="{{ $favicon192.RelPermalink }}"
+        >
+
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="{{ $appleTouch.RelPermalink }}"
+        >
+
+        {{ end }}
+
     {{- with resources.Get "scss/main.scss" -}}
         {{- $opts := dict
             "transpiler" "dartsass"
