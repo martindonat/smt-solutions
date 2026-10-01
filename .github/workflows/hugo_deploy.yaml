@@ -1,0 +1,58 @@
+name: Deploy main to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 0
+
+      - name: Install Dart Sass
+        env:
+          DART_SASS_VERSION: 1.93.2
+        run: |
+          curl -sL \
+            "https://github.com/sass/dart-sass/releases/download/${DART_SASS_VERSION}/dart-sass-${DART_SASS_VERSION}-linux-x64.tar.gz" \
+            -o /tmp/dart-sass.tar.gz
+
+          tar -xzf /tmp/dart-sass.tar.gz -C /tmp
+          echo "/tmp/dart-sass" >> "$GITHUB_PATH"
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: latest
+          extended: true
+
+      - name: Build
+        run: hugo --minify --baseURL "https://martindonat.github.io/smt-solutions/"
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
+
+      - name: Deploy
+        uses: actions/deploy-pages@v4
+        id: deployment
